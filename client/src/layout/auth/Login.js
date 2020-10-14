@@ -12,22 +12,6 @@ const Login = props => {
 	const [user, setUser] = useState({email: '', password: ''});
 	const [errors, setErrors] = useState({});
 
-	const loginUser = () => {
-		const requestBody = {
-			query: `
-				query {
-					login(email: "${user.email}", password: "${user.password}") {
-						_id
-						token
-						email
-					}
-				}
-			`
-		}
-
-		axios.post('/graphql', requestBody).then(res => console.log(res));
-	}
-
   const onChange = e => {
     const { name, value } = e.target;
     
@@ -37,8 +21,7 @@ const Login = props => {
 	const onSubmit = e => {
 		e.preventDefault();
 		
-		//props.loginUser(user);
-		loginUser();
+		props.loginUser(user);
 	}
 
 	useEffect(() => {

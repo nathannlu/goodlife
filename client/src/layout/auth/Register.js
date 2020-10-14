@@ -3,31 +3,14 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import classnames from 'classnames';
 import axios from 'axios';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { registerUser } from '../../actions/authActions';
 
 const Register = (props) => {
 	const [user, setUser] = useState({name: '', email: '', password: '', password2: ''});
 	const [errors, setErrors] = useState({});	
 	
-	const registerUser = () => {
-		const requestBody = {
-			query: `
-				mutation {
-					createUser(userInput: {
-						email: "${user.email}"
-						password: "${user.password}"
-						password2: "${user.password2}"
-					}) {
-						_id
-						token
-						email
-					}
-				}
-			`
-		}
-
-		axios.post('/graphql', requestBody).then(res => console.log(res));
-	}
-
   const onChange = e => {
     const { name, value } = e.target;
    	
@@ -37,8 +20,7 @@ const Register = (props) => {
 	const onSubmit = e => {
 		e.preventDefault();
 
-		// props.registerUser(user, props.history);
-		registerUser();
+		props.registerUser(user, props.history);
 	}
 
 	useEffect(() => {
@@ -131,5 +113,16 @@ const Register = (props) => {
 	)		
 }
 
-export default Register;
+
+Register.propTypes ={
+	registerUser: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = state => ({
+});
+
+export default connect(
+	mapStateToProps,
+	{ registerUser }
+)(Register);
 
