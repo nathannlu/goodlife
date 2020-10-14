@@ -8,11 +8,11 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "client-install": "yarn install --prefix client",
-    "client": "yarn start --prefix client",
-    "build": "cd client && yarn run build",
+    "client-install": "npm install --prefix client",
+    "client": "npm start --prefix client",
+    "build": "cd client && npm run build",
     "install-client": "cd client && yarn install",
-    "heroku-postbuild": "yarn run install-client && yarn run build",
+    "heroku-postbuild": "npm run install-client && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
