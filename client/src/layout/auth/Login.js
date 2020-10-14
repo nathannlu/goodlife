@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import axios from 'axios';
 
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -11,6 +12,22 @@ const Login = props => {
 	const [user, setUser] = useState({email: '', password: ''});
 	const [errors, setErrors] = useState({});
 
+	const loginUser = () => {
+		const requestBody = {
+			query: `
+				query {
+					login(email: "${user.email}", password: "${user.password}") {
+						_id
+						token
+						email
+					}
+				}
+			`
+		}
+
+		axios.post('/graphql', requestBody).then(res => console.log(res));
+	}
+
   const onChange = e => {
     const { name, value } = e.target;
     
@@ -20,7 +37,8 @@ const Login = props => {
 	const onSubmit = e => {
 		e.preventDefault();
 		
-		props.loginUser(user);
+		//props.loginUser(user);
+		loginUser();
 	}
 
 	useEffect(() => {

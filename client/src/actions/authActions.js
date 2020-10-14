@@ -40,6 +40,34 @@ export const registerUser = (userData, history) => dispatch => {
 };
 // Login - get user token
 export const loginUser = userData => dispatch => {
+
+	/*
+	const requestBody = {
+		query: `
+			query {
+				login(email: "${user.email}", password: "${user.password}") {
+					_id
+					token
+					email
+				}
+			}
+		`
+	}
+
+	axios
+		.post('/graphql', requestBody)
+		.then(res => {
+			const token = data.data.login.token;
+      localStorage.setItem("jwtToken", token);
+      // Set token to Auth header
+      setAuthToken(token);
+      // Decode token to get user data
+      const decoded = jwt_decode(token);
+      // Set current user
+      // dispatch(setCurrentUser(decoded));
+		});
+	*/
+
   axios
     .post("/api/users/login", userData)
     .then(res => {

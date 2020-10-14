@@ -2,12 +2,31 @@ import React, { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import classnames from 'classnames';
-
+import axios from 'axios';
 
 const Register = (props) => {
 	const [user, setUser] = useState({name: '', email: '', password: '', password2: ''});
 	const [errors, setErrors] = useState({});	
 	
+	const registerUser = () => {
+		const requestBody = {
+			query: `
+				mutation {
+					createUser(userInput: {
+						email: "${user.email}"
+						password: "${user.password}"
+						password2: "${user.password2}"
+					}) {
+						_id
+						token
+						email
+					}
+				}
+			`
+		}
+
+		axios.post('/graphql', requestBody).then(res => console.log(res));
+	}
 
   const onChange = e => {
     const { name, value } = e.target;
@@ -18,7 +37,8 @@ const Register = (props) => {
 	const onSubmit = e => {
 		e.preventDefault();
 
-		props.registerUser(user, props.history);
+		// props.registerUser(user, props.history);
+		registerUser();
 	}
 
 	useEffect(() => {
