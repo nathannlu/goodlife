@@ -1,0 +1,60 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@stripe/react-stripe-js": "^1.1.2",
+    "@stripe/stripe-js": "^1.7.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.19.2",
+    "classnames": "^2.2.6",
+    "filestack-react": "^3.1.0",
+    "is-empty": "^1.2.0",
+    "jwt-decode": "^2.2.0",
+    "postcss-cli": "^7.1.1",
+    "react": "^16.13.1",
+    "react-accessible-accordion": "^3.0.1",
+    "react-dom": "^16.13.1",
+    "react-helmet": "^6.1.0",
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-router-hash-link": "^1.2.2",
+    "react-scripts": "3.4.1",
+    "react-select": "^3.1.0",
+    "react-switch": "^5.0.1",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "simple-react-modal": "^0.5.1",
+    "tailwindcss": "^1.4.6",
+    "unsplash-js": "^6.0.0"
+  },
+  "scripts": {
+    "start": "npm run build:css && react-scripts start",
+    "build": "npm run build:css && react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "build:css": "postcss src/assets/styles/tailwind.css -o src/assets/styles/index.css",
+    "watch:css": "postcss src/assets/styles/tailwind.css -o src/assets/styles/index.css"
+  },
+  "proxy": "http://localhost:5000",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.8.0"
+  }
+}

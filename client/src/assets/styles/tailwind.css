@@ -1,0 +1,203 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@font-face {
+	font-family: 'Futura BT';
+	src: url('../fonts/futura-book-bt-22240.ttf') format('truetype');
+}
+
+html {
+  /* 1 rem = 16 px  */
+  font-size: 50%;
+}
+
+@media only screen and (min-width: 576px) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+	color: #333;
+}
+
+h1 {
+  font-size: 4.883rem;
+  line-height: 5.86rem;
+	font-family: 'Poppins', sans-serif;
+	font-weight: bold;
+}
+
+h2 {
+  font-size: 3.906rem;
+  line-height: 4.69rem;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+}
+
+h3 {
+	font-family: 'Poppins', sans-serif;
+  font-size: 3.125rem;
+  line-height: 3.75rem;
+}
+
+h4 {
+  font-size: 2.5rem;
+  line-height: 3.0rem;
+}
+
+h5 {
+  font-size: 2.0rem;
+  line-height: 2.4rem;
+	font-weight: bold;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1.5rem 2.5rem;
+	font-size: 1.4rem;
+	font-weight: bold;
+	transition: all .2s ease;
+	border-radius: 3px;
+}
+
+.btn:focus {
+	outline: none;
+}
+
+.btn-primary {
+	background-color: #00465a;
+	color: white;
+}
+
+.btn-primary:hover {
+	background-color: #141414;
+}
+
+.btn-outline {
+	background-color: transparent;
+	border-color: rgba(20,20,20,.5);
+	color: rgba(20,20,20,.5);
+	border: 1px solid rgba(20,20,20,.5) 
+}
+
+.btn-outline:hover {
+	border-style: solid;
+	border-color: #141414;
+	color: #141414;
+}
+
+.btn-black {
+  background-color: black;
+  color: white;
+}
+
+.link {
+	color: #00465a;
+	text-decoration: underline;
+	transition: all .2 ease;
+}
+
+.link:hover {
+	color: #141414;
+}
+
+.nav-link {
+	color: rgba(20,20,20,.5);
+	transition: all .2s ease;
+}
+
+.nav-link:hover {
+	color: #141414;
+}
+
+li {
+	list-style-image: url(https://uploads-ssl.webflow.com/5ce70410a40e7fbd23c39c8e/5d0150fa01d01e8019ec4429_checkmark.svg);
+	padding-left: 1rem;
+}
+
+input {
+	border: 1px solid rgba(36,28,21,0.3);
+	background-color: white;
+	transition: all .2s ease;
+	border-radius: 2px;
+	width: 100%;
+	padding: 0 1.5rem;
+	min-height: 4.6rem;
+}
+
+input:focus {
+	outline: none;
+	border: 1px solid #087887;
+	box-shadow: inset 0 0 0 1px #087887;
+}
+
+.input-underlined {
+	border: 0;
+	border-bottom: 1px solid rgba(36,28,21,0.3);
+	background-color: white;
+	transition: all .2s ease;
+	border-radius: 2px;
+	width: 100%;
+	padding: 0 1.5rem;
+	min-height: 4.6rem;
+}
+
+.input-underlined:focus {
+	outline: none;
+	border: 0;
+	border-bottom: 1px solid #087887;
+	box-shadow: inset 0 -10px 0 -9px #087887;
+}
+
+textarea {
+	border: 1px solid rgba(36,28,21,0.3);
+	background-color: white;
+	transition: all .2s ease;
+	border-radius: 2px;
+	width: 100%;
+	padding: 1rem 1.5rem;
+	min-height: 12rem;
+}
+
+textarea:focus {
+	outline: none;
+	border: 1px solid #00465a;
+	box-shadow: inset 0 0 0 1px #00465a;
+}
+
+.StripeElement {
+	min-height: 4.6rem;
+ 	padding: 1.3rem 1.5rem; 
+	width: 100%;
+	border: 1px solid rgba(36,28,21,0.3);
+	background-color: white;
+	transition: all .2s ease;
+	border-radius: 2px;
+}
+
+.StripeElement--focus {
+	outline: none;
+	border: 1px solid #00465a;
+	box-shadow: inset 0 0 0 1px #00465a;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
