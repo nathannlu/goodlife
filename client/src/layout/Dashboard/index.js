@@ -20,14 +20,10 @@ export default function () {
 	};
 
 	const fetchSessionCookies = () => {
+		const cors = 'https://cors-anywhere.herokuapp.com/'
 		const url = 'https://www.goodlifefitness.com/memberauth/authenticate';	
-		const config = {
-			headers: {
-				origin: 'https://www.goodlifefitness.com'
-			}
-		}
 
-		axios.post(url, {Login: 'nathanlu_@hotmail.com', Password: 'CanFISHfly1'}, config).then(res => {
+		axios.post(url, {Login: 'nathanlu_@hotmail.com', Password: 'CanFISHfly1'}).then(res => {
 			console.log(res);
 		})
 	};
